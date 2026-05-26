@@ -110,17 +110,18 @@ const ICON_LIST = [
 
 // --- Firebase Configuration ---
 const firebaseConfig = {
-  apiKey: "AIzaSyBaWWriu3X7iVQnglR5XcA0Mqqc736VopM",
-  authDomain: "science-academy-13dda.firebaseapp.com",
-  projectId: "science-academy-13dda",
-  storageBucket: "science-academy-13dda.firebasestorage.app",
-  messagingSenderId: "449626746191",
-  appId: "1:449626746191:web:73885c6bb862a07655293a"
+  apiKey: "AIzaSyCOCCXTNjfgyUZ9aL8HwEd2dkwXuuH35VY",
+  authDomain: "logos-academy-kjh.firebaseapp.com",
+  projectId: "logos-academy-kjh",
+  storageBucket: "logos-academy-kjh.firebasestorage.app",
+  messagingSenderId: "69686351513",
+  appId: "1:69686351513:web:b762ce7ac03759cea14a08",
+  measurementId: "G-BGT2S783D2"
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const APP_ID = 'Jeil-english-Geumo-grade3';
+const APP_ID = 'Logos-science-High';
 
 // --- Constants ---
 const DIFFICULTIES = ['하', '중하', '중', '중상', '상', '극상'];
@@ -514,7 +515,7 @@ export default function App() {
   const [myStudentId, setMyStudentId] = useState(null);
 
   // Site settings
-  const [siteTitle, setSiteTitle] = useState('English Academy');
+  const [siteTitle, setSiteTitle] = useState('로고스학원 고등');
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [siteColor, setSiteColor] = useState('#1d4ed8');
   const [showColorPicker, setShowColorPicker] = useState(false);
@@ -942,7 +943,7 @@ export default function App() {
             unsubscribers.push(onSnapshot(doc(db, ...basePath, 'settings', 'config'), snap => {
               if (snap.exists()) {
                 const d = snap.data();
-                setSiteTitle(d.siteTitle || 'English Academy');
+                setSiteTitle(d.siteTitle || '로고스학원 고등');
                 if (d.siteColor) setSiteColor(d.siteColor);
                 if (d.subjects) setSubjects(d.subjects);
                 if (d.memoSections) setMemoSections(d.memoSections);
